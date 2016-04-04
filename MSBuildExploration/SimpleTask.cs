@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Microsoft.Build.Framework;
 using Microsoft.Build.Utilities;
 
 namespace MSBuildExploration
@@ -12,7 +12,7 @@ namespace MSBuildExploration
 		#region Publics
 		public override bool Execute()
 		{
-			Console.Write("This is SimpleTask! Hello, {0}!", this.Name);
+			Log.LogMessage(MessageImportance.Normal, "This is SimpleTask! Hello, {0}!", this.Name);
 			return true;
 		}
 		#endregion
