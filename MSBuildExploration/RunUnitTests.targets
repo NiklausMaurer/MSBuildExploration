@@ -4,18 +4,16 @@
 
   <PropertyGroup>
     <MsTestExePath>C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\mstest.exe</MsTestExePath>
-    <DoubleQuotes>"</DoubleQuotes>
-    <OutputPath>$(MSBuildProjectDirectory)\Output</OutputPath>
-    <MsTestResultPath>$(OutputPath)\MyResults.trx</MsTestResultPath>
+    <MsTestResultPath>$(MSBuildProjectDirectory)\..\TestResults\last_run.trx</MsTestResultPath>
     <Configuration>Release</Configuration>
   </PropertyGroup>
 
 
   <Target Name="RunUnitTests">
 
-    <Delete Files=".\testresults.trx" />
+    <Delete Files="$(MsTestResultPath)" />
 
-    <Exec Command="&quot;C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\mstest.exe&quot; /testcontainer:&quot;..\MSBuildExplorationTest\bin\Debug\MSBuildExplorationTest.dll&quot; /resultsfile:&quot;.\testresults.trx&quot;" />
+    <Exec Command="&quot;$(MsTestExePath)&quot; /testcontainer:&quot;$(MSBuildProjectDirectory)\..\MSBuildExplorationTest\bin\Debug\MSBuildExplorationTest.dll&quot; /resultsfile:&quot;$(MsTestResultPath)&quot;" />
 
     <!--
     
