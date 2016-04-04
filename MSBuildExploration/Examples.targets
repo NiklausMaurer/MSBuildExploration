@@ -1,10 +1,4 @@
-<!--
-***********************************************************************************************
-AdeNet.Common.targets
 
-Copyright (C) 2014 Mathys & Scheitlin AG. All rights reserved.
-***********************************************************************************************
--->
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
   <UsingTask TaskName="SimpleTask" AssemblyFile="bin\Debug\MSBuildExploration.dll" />

@@ -1,0 +1,38 @@
+<Project DefaultTargets="RunUnitTests" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <UsingTask TaskName="SimpleTask" AssemblyFile="bin\Debug\MSBuildExploration.dll" />
+
+  <PropertyGroup>
+    <MsTestExePath>C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\mstest.exe</MsTestExePath>
+    <DoubleQuotes>"</DoubleQuotes>
+    <OutputPath>$(MSBuildProjectDirectory)\Output</OutputPath>
+    <MsTestResultPath>$(OutputPath)\MyResults.trx</MsTestResultPath>
+    <Configuration>Release</Configuration>
+  </PropertyGroup>
+
+
+  <Target Name="RunUnitTests">
+
+    <Delete Files=".\testresults.trx" />
+
+    <Exec Command="&quot;C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\mstest.exe&quot; /testcontainer:&quot;..\MSBuildExplorationTest\bin\Debug\MSBuildExplorationTest.dll&quot; /resultsfile:&quot;.\testresults.trx&quot;" />
+
+    <!--
+    
+    <PropertyGroup>
+      <MsTestCommand>"$(MsTestExePath)" @(TestAssemblies->'/testcontainer:"%(FullPath)"', ' ') /resultsfile:"TestResults\Results.trx""</MsTestCommand>
+    </PropertyGroup>
+    
+    <Message Text="MsTestCommand: @(TestAssemblies->'/testcontainer:$(DoubleQuotes)%(FullPath)$(DoubleQuotes)', ' ')"
+             Importance="high"/>
+
+    <RemoveDir Directories="TestResults" Condition="Exists('TestResults')" />
+    <MakeDir Directories="TestResults" />
+
+    <Exec Command="$(MsTestCommand)" />
+    
+    -->
+    
+  </Target>
+
+</Project>
