@@ -8,6 +8,10 @@ namespace MSBuildExplorationTest
 	[TestClass]
 	public class SimpleTaskTest
 	{
+		#region Constants
+		private const string MICHAEL_JACKSON = "Michael Jackson";
+		#endregion
+
 		#region Properties
 		private SimpleTask SimpleTask { get; set; }
 		private IBuildEngine BuildEngine { get; set; }
@@ -30,14 +34,14 @@ namespace MSBuildExplorationTest
 		public void TestExecution()
 		{
 			// Arrange
-			this.SimpleTask.Name = "Michael Jackson";
+			this.SimpleTask.Name = MICHAEL_JACKSON;
 
 			// Act
 			bool bSuccess = this.SimpleTask.Execute();
 
 			// Assert
 			Assert.IsFalse(this.SimpleTask.Log.HasLoggedErrors);
-			this.BuildEngine.Received().LogMessageEvent(Arg.Is<BuildMessageEventArgs>(args => args.Message.Contains("Michael Jackson")));
+			this.BuildEngine.Received().LogMessageEvent(Arg.Is<BuildMessageEventArgs>(args => args.Message.Contains(MICHAEL_JACKSON)));
 			Assert.IsTrue(bSuccess);
 		}
 		#endregion
