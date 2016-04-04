@@ -1,4 +1,5 @@
-﻿using Microsoft.Build.Utilities;
+﻿using System;
+using Microsoft.Build.Utilities;
 
 namespace MSBuildExploration
 {
@@ -6,6 +7,7 @@ namespace MSBuildExploration
     {
 	    public override bool Execute()
 	    {
+			Console.Write("This is SimpleTask!");
 		    return true;
 	    }
     }

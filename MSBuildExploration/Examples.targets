@@ -1,0 +1,17 @@
+<!--
+***********************************************************************************************
+AdeNet.Common.targets
+
+Copyright (C) 2014 Mathys & Scheitlin AG. All rights reserved.
+***********************************************************************************************
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <UsingTask TaskName="SimpleTask" AssemblyFile="C:\Users\nim\Documents\Visual Studio 2013\Projects\MSBuildExploration\MSBuildExploration\bin\Debug\MSBuildExploration.dll" />
+
+  <Target Name="RunSimpleTask">    
+		  <SimpleTask />
+
+	</Target>
+
+</Project>
