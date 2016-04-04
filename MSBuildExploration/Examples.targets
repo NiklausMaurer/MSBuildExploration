@@ -11,7 +11,7 @@ Copyright (C) 2014 Mathys & Scheitlin AG. All rights reserved.
 
   <Target Name="RunSimpleTask">    
     
-		  <SimpleTask />
+		  <SimpleTask Name="(whatever your name is)" />
 
 	</Target>
 
