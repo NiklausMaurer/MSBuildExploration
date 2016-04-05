@@ -6,10 +6,10 @@ using NSubstitute;
 namespace MSBuildExplorationTest
 {
     [TestClass]
-    public class PushToTestStoreTaskTest
+    public class PostFileTest
     {
         #region Properties
-        private PushToTestStoreTask PushToTestStoreTask { get; set; }
+        private PostFile PostFile { get; set; }
         private IBuildEngine BuildEngine { get; set; }
         #endregion
 
@@ -18,7 +18,7 @@ namespace MSBuildExplorationTest
         public void InitializeTest()
         {
             this.BuildEngine = Substitute.For<IBuildEngine>();
-            this.PushToTestStoreTask = new PushToTestStoreTask
+            this.PostFile = new PostFile
             {
                 BuildEngine = this.BuildEngine
             };
@@ -30,10 +30,10 @@ namespace MSBuildExplorationTest
         public void TestExecution()
         {
             // Act
-            bool bSuccess = this.PushToTestStoreTask.Execute();
+            bool bSuccess = this.PostFile.Execute();
 
             // Assert
-            Assert.IsFalse(this.PushToTestStoreTask.Log.HasLoggedErrors);
+            Assert.IsFalse(this.PostFile.Log.HasLoggedErrors);
             Assert.IsTrue(bSuccess);
         }
         #endregion

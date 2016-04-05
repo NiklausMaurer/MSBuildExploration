@@ -2,7 +2,7 @@
 
 namespace MSBuildExploration
 {
-    public class PushToTestStoreTask : Task
+    public class PostFile : Task
     {
         public override bool Execute()
         {
