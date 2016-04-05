@@ -15,6 +15,7 @@
 
     <Exec Command="&quot;$(MsTestExePath)&quot; /testcontainer:&quot;$(MSBuildProjectDirectory)\..\MSBuildExplorationTest\bin\Debug\MSBuildExplorationTest.dll&quot; /resultsfile:&quot;$(MsTestResultPath)&quot;" />
 
+    
     <!--
     
     <PropertyGroup>
